@@ -14,3 +14,6 @@ https://github.com/user-attachments/assets/fa9080bc-1003-4915-bbdf-9099062fd94d
 - FastAPI
 - React
 - Axios
+
+
+## Unfortunately the app cannot be deployed without Ollama setup on deployment platforms :(
