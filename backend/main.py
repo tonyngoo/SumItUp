@@ -1,4 +1,3 @@
-from langchain.chains.summarize import load_summarize_chain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.chat_models import ChatOllama
 from langchain.docstore.document import Document
@@ -78,7 +77,3 @@ def create_section_summary(req: TextRequest):
     # Catches any errors
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error summarizing text: {str(e)}")
-    
-if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=8000)
