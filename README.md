@@ -7,6 +7,9 @@ In this demo, we're copying a chunk of a text passage about the Toronto Raptors 
 
 https://github.com/user-attachments/assets/fa9080bc-1003-4915-bbdf-9099062fd94d
 
+## If you are interested in running this locally
+Check out the master branch for more details!
+
 ## Tech Stack
 - Python
 - Langchain
