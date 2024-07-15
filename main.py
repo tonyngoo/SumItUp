@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from operator import itemgetter
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -20,6 +21,9 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
 )
+
+# Mounts the `static` folder within the `build` folder to the `/static` route.
+app.mount('/static', StaticFiles(directory="./build/static"), 'static')
 
 def AISummary(text):
     try:
@@ -81,4 +85,4 @@ def create_section_summary(req: TextRequest):
     
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=10000)
