@@ -13,9 +13,15 @@ from operator import itemgetter
 
 app = FastAPI()
 
+# Configure CORS
+origins = [
+    "https://sumitup.onrender.com/",
+    "http://localhost:3000",  # Add your local development URL if needed
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
@@ -65,7 +71,7 @@ class TextRequest(BaseModel):
     text: str
 
 # Endpoint that takes in text and responds with an AI generated summary of the text
-@app.post("https://sumitup.onrender.com/summarize-text")
+@app.post("/summarize-text")
 def create_section_summary(req: TextRequest):
     try:
         # Uses the LLM to create a generate a summary with the provided text
@@ -78,7 +84,3 @@ def create_section_summary(req: TextRequest):
     # Catches any errors
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error summarizing text: {str(e)}")
-    
-if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=8000)

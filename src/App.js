@@ -10,7 +10,7 @@ function App() {
   const handleSummarize = async () => {
     setLoading(true); // Set loading state to true
     try {
-      const response = await axios.post('http://localhost:8000/summarize-text', { text });
+      const response = await axios.post('https://sumitup-backend.onrender.com/summarize-text', { text });
       setSummary(response.data.summary);
     } catch (error) {
       console.error('Error summarizing text:', error);
