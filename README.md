@@ -1,3 +1,12 @@
-Sum It Up!
+# Sum It Up!
 
-![SumItUp](https://github.com/user-attachments/assets/7b8aa273-0ad9-4945-bac0-6e4d4eb1ebe6)
+## Tech Stack
+- Python
+- Langchain
+- Ollama
+- FastAPI
+- React
+- Axios
+
+https://github.com/user-attachments/assets/e01326d9-3b42-4893-920b-0b8bcbf5a458
+
