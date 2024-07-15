@@ -65,7 +65,7 @@ class TextRequest(BaseModel):
     text: str
 
 # Endpoint that takes in text and responds with an AI generated summary of the text
-@app.post("/summarize-text")
+@app.post("https://sumitup.onrender.com//summarize-text")
 def create_section_summary(req: TextRequest):
     try:
         # Uses the LLM to create a generate a summary with the provided text
